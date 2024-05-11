@@ -157,20 +157,14 @@ double det_matrix(Matrix a)
         return 0;
    }
 
-    Matrix c; // 代数余子式
     int n = a.rows; // 矩阵阶数
     int det = 0; // 行列式的值
 
-    c.rows = c.cols = n-1;
-
    if (n > 2)
    {
-        for (int i = 0; i < n; i++) // 行循环
-        {
-            for (int j = 0; j < n; j++) // 列循环
-            {
-                det += cofactor_matrix(a, i, j);
-            }
+        for (int i = 0; i < n; i++) // 列循环
+        {        
+                 det += a.data[1][i] * cofactor_matrix(a, 1, i);
         }
    }
    else if (n == 2)
@@ -233,8 +227,7 @@ void print_matrix(Matrix a)
 
 int cofactor_matrix(Matrix a, int i, int j)
 {
-    Matrix c; // a的余子式
-    int n = a.rows - 1; // c的阶数
+    Matrix c={}; // a的余子式
     int flag; // 系数正负
 
     c.rows = a.rows - 1;
@@ -256,16 +249,21 @@ int cofactor_matrix(Matrix a, int i, int j)
     /**
      * @brief 求余子式
     */
-    for (int z = 0; z < n; z++) // 行循环
+    for (int z = 0; z < a.rows; z++) // 行循环
     {
-        for (int y = 0; y < n; y++) // 列循环
+        for (int y = 0; y < a.rows; y++) // 列循环
         {
-            if (z == i || y == j); // 跳过i行和j列元素
-            
+            if (z == i || y == j)
+            {
+
+            } // 跳过i行和j列元素
+            else
+            {
             int z1 = z - (z > i); // c对应行
             int y1 = y - (y > j); // c对应列
 
             c.data[z1][y1] = a.data[z][y];
+            }
         }
     }
 
