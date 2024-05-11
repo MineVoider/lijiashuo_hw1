@@ -86,8 +86,8 @@ Matrix mul_matrix(Matrix a, Matrix b)
     }
 
     Matrix c={};
-    c.rows = a.rows; // c的行数
-    c.cols = b.cols; // c的列数
+    c.rows = a.rows;
+    c.cols = b.cols;
 
     /**
      * @brief 矩阵乘法
@@ -109,8 +109,8 @@ Matrix mul_matrix(Matrix a, Matrix b)
 Matrix scale_matrix(Matrix a, double k)
 {
    Matrix c;
-   c.rows = a.rows; //c的行数
-   c.cols = a.cols; //c的列数
+   c.rows = a.rows;
+   c.cols = a.cols;
 
     /**
      * @brief 矩阵数乘
@@ -128,8 +128,22 @@ Matrix scale_matrix(Matrix a, double k)
 
 Matrix transpose_matrix(Matrix a)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    Matrix c;
+    c.rows = a.cols;
+    c.cols = a.rows;
+    
+    /**
+     * @brief 矩阵转置
+    */
+    for (int i = 0; i < c.rows; i++)
+    {
+        for (int j = 0; j < c.cols; j++)
+        {
+            c.data[i][j] = a.data[j][i];
+        }
+    }
+
+    return c;
 }
 
 double det_matrix(Matrix a)
