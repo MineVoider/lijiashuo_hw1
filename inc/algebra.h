@@ -97,6 +97,6 @@ void print_matrix(Matrix a);
  * @param j 数j
  * @return a的第i行第j列的代数余子式的值
 */
-int cofactor_matrix(Matrix a, int i, int j);
+double cofactor_matrix(Matrix a, int i, int j);
 
 #endif

@@ -158,7 +158,7 @@ double det_matrix(Matrix a)
    }
 
     int n = a.rows; // 矩阵阶数
-    double det = 0; // 行列式的值
+    double det = 0.0; // 行列式的值
 
    if (n > 2)
    {
@@ -225,7 +225,7 @@ void print_matrix(Matrix a)
     }
 }
 
-int cofactor_matrix(Matrix a, int i, int j)
+double cofactor_matrix(Matrix a, int i, int j)
 {
     Matrix c={}; // a的余子式
     int flag; // 系数正负
