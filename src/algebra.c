@@ -164,7 +164,7 @@ double det_matrix(Matrix a)
    {
         for (int i = 0; i < n; i++) // 列循环
         {        
-                 det += a.data[1][i] * cofactor_matrix(a, 1, i);
+                 det += a.data[0][i] * cofactor_matrix(a, 0, i);
         }
    }
    else if (n == 2)
