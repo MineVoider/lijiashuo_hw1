@@ -12,8 +12,22 @@ Matrix create_matrix(int row, int col)
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    Matrix c;
+    int row = a.rows; // 矩阵的行数
+    int col = a.cols; // 矩阵的列数
+
+    c.rows = row;
+    c.cols = col;
+
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < col; j++)
+        {
+            c.data[i][j] = a.data[i][j] + b.data[i][j];
+        }
+    }
+    
+    return c;
 }
 
 Matrix sub_matrix(Matrix a, Matrix b)
