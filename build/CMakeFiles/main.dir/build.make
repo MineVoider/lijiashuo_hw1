@@ -52,10 +52,10 @@ RM = D:\CMake\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\浙江大学\X-Lab\Homework_1
+CMAKE_SOURCE_DIR = D:\ZJU\X-Lab\Homework_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\浙江大学\X-Lab\Homework_1\build
+CMAKE_BINARY_DIR = D:\ZJU\X-Lab\Homework_1\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -70,33 +70,33 @@ include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/src/algebra.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/algebra.obj: CMakeFiles/main.dir/includes_C.rsp
-CMakeFiles/main.dir/src/algebra.obj: D:/浙江大学/X-Lab/Homework_1/src/algebra.c
+CMakeFiles/main.dir/src/algebra.obj: D:/ZJU/X-Lab/Homework_1/src/algebra.c
 CMakeFiles/main.dir/src/algebra.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\浙江大学\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/algebra.obj"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/algebra.obj -MF CMakeFiles\main.dir\src\algebra.obj.d -o CMakeFiles\main.dir\src\algebra.obj -c D:\浙江大学\X-Lab\Homework_1\src\algebra.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ZJU\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/algebra.obj"
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/algebra.obj -MF CMakeFiles\main.dir\src\algebra.obj.d -o CMakeFiles\main.dir\src\algebra.obj -c D:\ZJU\X-Lab\Homework_1\src\algebra.c
 
 CMakeFiles/main.dir/src/algebra.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/algebra.i"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\浙江大学\X-Lab\Homework_1\src\algebra.c > CMakeFiles\main.dir\src\algebra.i
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ZJU\X-Lab\Homework_1\src\algebra.c > CMakeFiles\main.dir\src\algebra.i
 
 CMakeFiles/main.dir/src/algebra.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/algebra.s"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\浙江大学\X-Lab\Homework_1\src\algebra.c -o CMakeFiles\main.dir\src\algebra.s
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ZJU\X-Lab\Homework_1\src\algebra.c -o CMakeFiles\main.dir\src\algebra.s
 
 CMakeFiles/main.dir/src/main.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.obj: CMakeFiles/main.dir/includes_C.rsp
-CMakeFiles/main.dir/src/main.obj: D:/浙江大学/X-Lab/Homework_1/src/main.c
+CMakeFiles/main.dir/src/main.obj: D:/ZJU/X-Lab/Homework_1/src/main.c
 CMakeFiles/main.dir/src/main.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\浙江大学\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.obj"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.obj -MF CMakeFiles\main.dir\src\main.obj.d -o CMakeFiles\main.dir\src\main.obj -c D:\浙江大学\X-Lab\Homework_1\src\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\ZJU\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.obj"
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.obj -MF CMakeFiles\main.dir\src\main.obj.d -o CMakeFiles\main.dir\src\main.obj -c D:\ZJU\X-Lab\Homework_1\src\main.c
 
 CMakeFiles/main.dir/src/main.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/main.i"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\浙江大学\X-Lab\Homework_1\src\main.c > CMakeFiles\main.dir\src\main.i
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\ZJU\X-Lab\Homework_1\src\main.c > CMakeFiles\main.dir\src\main.i
 
 CMakeFiles/main.dir/src/main.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/main.s"
-	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\浙江大学\X-Lab\Homework_1\src\main.c -o CMakeFiles\main.dir\src\main.s
+	D:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\ZJU\X-Lab\Homework_1\src\main.c -o CMakeFiles\main.dir\src\main.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -106,17 +106,17 @@ main_OBJECTS = \
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/src/algebra.obj
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/src/main.obj
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/build.make
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/linkLibs.rsp
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/objects1.rsp
-D:/浙江大学/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\浙江大学\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable D:\浙江大学\X-Lab\Homework_1\bin\main.exe"
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/src/algebra.obj
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/src/main.obj
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/build.make
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/linkLibs.rsp
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/objects1.rsp
+D:/ZJU/X-Lab/Homework_1/bin/main.exe: CMakeFiles/main.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\ZJU\X-Lab\Homework_1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable D:\ZJU\X-Lab\Homework_1\bin\main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/main.dir/build: D:/浙江大学/X-Lab/Homework_1/bin/main.exe
+CMakeFiles/main.dir/build: D:/ZJU/X-Lab/Homework_1/bin/main.exe
 .PHONY : CMakeFiles/main.dir/build
 
 CMakeFiles/main.dir/clean:
@@ -124,6 +124,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\浙江大学\X-Lab\Homework_1 D:\浙江大学\X-Lab\Homework_1 D:\浙江大学\X-Lab\Homework_1\build D:\浙江大学\X-Lab\Homework_1\build D:\浙江大学\X-Lab\Homework_1\build\CMakeFiles\main.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\ZJU\X-Lab\Homework_1 D:\ZJU\X-Lab\Homework_1 D:\ZJU\X-Lab\Homework_1\build D:\ZJU\X-Lab\Homework_1\build D:\ZJU\X-Lab\Homework_1\build\CMakeFiles\main.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/main.dir/depend
 

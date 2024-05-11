@@ -12,6 +12,11 @@ Matrix create_matrix(int row, int col)
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
+    if (a.rows != b.rows || a.cols != b.cols)
+    {
+        printf("Error: Matrix a and b must have the same rows and cols.");
+        return create_matrix(0,0);
+    }
     Matrix c;
     int row = a.rows; // 矩阵的行数
     int col = a.cols; // 矩阵的列数
