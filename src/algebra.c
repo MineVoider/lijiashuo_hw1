@@ -166,8 +166,23 @@ int rank_matrix(Matrix a)
 
 double trace_matrix(Matrix a)
 {
-    // ToDo
-    return 0;
+    /**
+     * @brief 错误提示
+    */
+   if (a.rows != a.cols)
+   {
+        printf("Error: The matrix must be a square matrix.");
+        return 0;
+   }
+
+   int trace = 0; //矩阵的迹
+
+   for (int i = 0; i < a.rows; i++)
+   {
+        trace += a.data[i][i];
+   }
+
+   return trace;
 }
 
 void print_matrix(Matrix a)
