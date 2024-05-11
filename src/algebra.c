@@ -85,6 +85,7 @@ Matrix mul_matrix(Matrix a, Matrix b)
         return create_matrix(0,0);
     }
 
+    //LS
     Matrix c={};
     c.rows = a.rows; // c的行数
     c.cols = b.cols; // c的列数
