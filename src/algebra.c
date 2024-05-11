@@ -169,7 +169,6 @@ double trace_matrix(Matrix a)
     /**
      * @brief 错误提示
     */
-   // 123
    if (a.rows != a.cols)
    {
         printf("Error: The matrix must be a square matrix.");
