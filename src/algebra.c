@@ -12,13 +12,11 @@ Matrix create_matrix(int row, int col)
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
-    /**
-     * @brief 错误提示
-    */
+    // 错误提示
     if (a.rows != b.rows || a.cols != b.cols)
     {
         printf("Error: Matrix a and b must have the same rows and cols.");
-        return create_matrix(0,0);
+        return create_matrix(0, 0);
     }
 
     Matrix c;
@@ -28,9 +26,7 @@ Matrix add_matrix(Matrix a, Matrix b)
     c.rows = row;
     c.cols = col;
 
-    /**
-     * @brief 矩阵加法
-    */
+    // 矩阵加法
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -44,13 +40,11 @@ Matrix add_matrix(Matrix a, Matrix b)
 
 Matrix sub_matrix(Matrix a, Matrix b)
 {
-    /**
-     * @brief 错误提示
-    */
+    // 错误提示
     if (a.rows != b.rows || a.cols != b.cols)
     {
         printf("Error: Matrix a and b must have the same rows and cols.");
-        return create_matrix(0,0);
+        return create_matrix(0, 0);
     }
     
     Matrix c;
@@ -60,9 +54,7 @@ Matrix sub_matrix(Matrix a, Matrix b)
     c.rows = row;
     c.cols = col;
 
-    /**
-     * @brief 矩阵减法
-    */
+    // 矩阵减法
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -76,22 +68,18 @@ Matrix sub_matrix(Matrix a, Matrix b)
 
 Matrix mul_matrix(Matrix a, Matrix b)
 {
-    /**
-     * @brief 错误提示
-    */
+    // 错误提示
     if (a.cols != b.rows)
     {
         printf("Error: The number of cols of matrix a must be equal to the number of rows of matrix b.");
-        return create_matrix(0,0);
+        return create_matrix(0, 0);
     }
 
     Matrix c={};
     c.rows = a.rows;
     c.cols = b.cols;
 
-    /**
-     * @brief 矩阵乘法
-    */
+    // 矩阵乘法
     for (int i = 0; i < c.rows; i++)
     {
         for (int j = 0; j < c.cols; j++)
@@ -112,9 +100,7 @@ Matrix scale_matrix(Matrix a, double k)
    c.rows = a.rows;
    c.cols = a.cols;
 
-    /**
-     * @brief 矩阵数乘
-    */
+    // 矩阵数乘
    for (int i = 0; i < c.rows; i++)
    {
         for (int j = 0; j < c.cols; j++)
@@ -132,9 +118,7 @@ Matrix transpose_matrix(Matrix a)
     c.rows = a.cols;
     c.cols = a.rows;
     
-    /**
-     * @brief 矩阵转置
-    */
+    // 矩阵转置
     for (int i = 0; i < c.rows; i++)
     {
         for (int j = 0; j < c.cols; j++)
@@ -148,9 +132,7 @@ Matrix transpose_matrix(Matrix a)
 
 double det_matrix(Matrix a)
 {
-    /**
-     * @brief 错误提示
-    */
+    // 错误提示
    if (a.rows != a.cols)
    {
         printf("Error: The matrix must be a square matrix.");
@@ -164,7 +146,7 @@ double det_matrix(Matrix a)
    {
         for (int i = 0; i < n; i++) // 列循环
         {        
-                 det += a.data[0][i] * cofactor_matrix(a, 0, i);
+                 det += a.data[0][i] * cofactor_matrix(a, 0, i); // 递归计算
         }
    }
    else if (n == 2)
@@ -181,8 +163,35 @@ double det_matrix(Matrix a)
 
 Matrix inv_matrix(Matrix a)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    // 非方阵错误提示
+   if (a.rows != a.cols)
+   {
+        printf("Error: The matrix must be a square matrix.");
+        return create_matrix(0, 0);
+   } 
+
+   // 零矩阵错误提示
+   if (det_matrix(a) == 0)
+   {
+        printf("Error: The matrix is singular.");
+        return create_matrix(0, 0);
+   }
+
+    Matrix c; // a的伴随矩阵
+    c.rows = a.rows;
+    c.cols = a.cols;
+
+    // 求伴随矩阵
+    for (int i = 0; i < c.rows; i++) // 行循环
+    {
+        for (int j = 0; j < c.cols; j++) // 列循环
+        {
+            c.data[i][j] = cofactor_matrix(a, j, i);
+        }
+    }
+
+    // 求矩阵的逆
+    return scale_matrix(c, 1 / det_matrix(a));
 }
 
 int rank_matrix(Matrix a)
