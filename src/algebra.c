@@ -173,7 +173,7 @@ double det_matrix(Matrix a)
             }
         }
    }
-   else if (n = 2)
+   else if (n == 2)
    {
         return a.data[0][0] * a.data[1][1] - a.data[0][1] * a.data[1][0];
    }
