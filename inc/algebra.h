@@ -90,4 +90,13 @@ double trace_matrix(Matrix a);
 */
 void print_matrix(Matrix a);
 
+/**
+ * @brief 矩阵的代数余子式的值
+ * @param a 矩阵a
+ * @param i 数i
+ * @param j 数j
+ * @return a的第i行第j列的代数余子式的值
+*/
+int cofactor_matrix(Matrix a, int i, int j);
+
 #endif

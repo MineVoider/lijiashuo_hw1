@@ -169,14 +169,7 @@ double det_matrix(Matrix a)
         {
             for (int j = 0; j < n; j++) // 列循环
             {
-                if (((i+j)%2) == 1) // i+j为奇数
-                {
-                    det += -(a.data[i][j] * det_matrix(c));
-                }
-                else
-                {
-                    det += a.data[i][j] * det_matrix(c);
-                }
+                det += cofactor_matrix(a, i, j);
             }
         }
    }
@@ -236,4 +229,42 @@ void print_matrix(Matrix a)
         }
         printf("\n");
     }
+}
+
+int cofactor_matrix(Matrix a, int i, int j)
+{
+    Matrix c; // a的余子式
+    int n = a.rows - 1; // c的阶数
+    int flag; // 系数正负
+
+    /**
+     * @brief 判断系数正负
+    */
+    if ((i+j)%2 == 1)
+    {
+        flag = -1;
+    }
+    else
+    {
+        flag = 1;
+    }
+
+    c.rows = a.rows - 1;
+    c.cols = a.cols - 1;
+
+    /**
+     * @brief 求余子式
+    */
+    for (int z = 0; z < n && z != i; z++) // 行循环
+    {
+        for (int y = 0; y < n && y != j; y++) // 列循环
+        {
+            int z1 = z - (z > i); // c对应行
+            int y1 = y - (y > j); // c对应列
+
+            c.data[z1][y1] = a.data[z][y];
+        }
+    }
+
+    return flag*det_matrix(c);
 }
