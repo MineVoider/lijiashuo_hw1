@@ -158,7 +158,7 @@ double det_matrix(Matrix a)
    }
 
     int n = a.rows; // 矩阵阶数
-    int det = 0; // 行列式的值
+    double det = 0; // 行列式的值
 
    if (n > 2)
    {
