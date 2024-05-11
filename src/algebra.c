@@ -237,6 +237,10 @@ int cofactor_matrix(Matrix a, int i, int j)
     int n = a.rows - 1; // c的阶数
     int flag; // 系数正负
 
+    c.rows = a.rows - 1;
+    c.cols = a.cols - 1;
+
+
     /**
      * @brief 判断系数正负
     */
@@ -249,16 +253,15 @@ int cofactor_matrix(Matrix a, int i, int j)
         flag = 1;
     }
 
-    c.rows = a.rows - 1;
-    c.cols = a.cols - 1;
-
     /**
      * @brief 求余子式
     */
-    for (int z = 0; z < n && z != i; z++) // 行循环
+    for (int z = 0; z < n; z++) // 行循环
     {
-        for (int y = 0; y < n && y != j; y++) // 列循环
+        for (int y = 0; y < n; y++) // 列循环
         {
+            if (z == i || y == j); // 跳过i行和j列元素
+            
             int z1 = z - (z > i); // c对应行
             int y1 = y - (y > j); // c对应列
 
