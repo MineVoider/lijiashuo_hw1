@@ -12,7 +12,9 @@ Matrix create_matrix(int row, int col)
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
-    // 错误提示
+    /**
+     * @brief 错误提示
+    */
     if (a.rows != b.rows || a.cols != b.cols)
     {
         printf("Error: Matrix a and b must have the same rows and cols.");
@@ -26,7 +28,9 @@ Matrix add_matrix(Matrix a, Matrix b)
     c.rows = row;
     c.cols = col;
 
-    // 矩阵a和b的每一位相加
+    /**
+     * @brief 矩阵加法
+    */
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -40,7 +44,9 @@ Matrix add_matrix(Matrix a, Matrix b)
 
 Matrix sub_matrix(Matrix a, Matrix b)
 {
-    // 错误提示
+    /**
+     * @brief 错误提示
+    */
     if (a.rows != b.rows || a.cols != b.cols)
     {
         printf("Error: Matrix a and b must have the same rows and cols.");
@@ -54,7 +60,9 @@ Matrix sub_matrix(Matrix a, Matrix b)
     c.rows = row;
     c.cols = col;
 
-    // 矩阵a和b的每一位相碱
+    /**
+     * @brief 矩阵减法
+    */
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -68,8 +76,34 @@ Matrix sub_matrix(Matrix a, Matrix b)
 
 Matrix mul_matrix(Matrix a, Matrix b)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    /**
+     * @brief 错误提示
+    */
+    if (a.cols != b.rows)
+    {
+        printf("Error: The number of cols of matrix a must be equal to the number of rows of matrix b.");
+        return create_matrix(0,0);
+    }
+
+    Matrix c={};
+    c.rows = a.rows; // c的行数
+    c.cols = b.cols; // c的列数
+
+    /**
+     * @brief 矩阵乘法
+    */
+    for (int i = 0; i < c.rows; i++)
+    {
+        for (int j = 0; j < c.cols; j++)
+        {
+            for (int k = 0; k < a.cols; k++)
+            {
+                c.data[i][j] += a.data[i][k] * b.data[k][j];
+            }
+        }
+    }
+
+    return c;
 }
 
 Matrix scale_matrix(Matrix a, double k)
