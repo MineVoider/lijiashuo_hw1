@@ -148,8 +148,48 @@ Matrix transpose_matrix(Matrix a)
 
 double det_matrix(Matrix a)
 {
-    // ToDo
-    return 0;
+    /**
+     * @brief 错误提示
+    */
+   if (a.rows != a.cols)
+   {
+        printf("Error: The matrix must be a square matrix.");
+        return 0;
+   }
+
+    Matrix c; // 代数余子式
+    int n = a.rows; // 矩阵阶数
+    int det = 0; // 行列式的值
+
+    c.rows = c.cols = n-1;
+
+   if (n > 2)
+   {
+        for (int i = 0; i < n; i++) // 行循环
+        {
+            for (int j = 0; j < n; j++) // 列循环
+            {
+                if (((i+j)%2) == 1) // i+j为奇数
+                {
+                    det += -(a.data[i][j] * det_matrix(c));
+                }
+                else
+                {
+                    det += a.data[i][j] * det_matrix(c);
+                }
+            }
+        }
+   }
+   else if (n = 2)
+   {
+        return a.data[0][0] * a.data[1][1] - a.data[0][1] * a.data[1][0];
+   }
+   else
+   {
+        return a.data[0][0];
+   }
+
+   return det;
 }
 
 Matrix inv_matrix(Matrix a)
