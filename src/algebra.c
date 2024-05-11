@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#define L_Swap(a,b,t) (a) = (t); (a) = (b); (b) = (t)
+
 Matrix create_matrix(int row, int col)
 {
     Matrix m;
@@ -196,29 +198,81 @@ Matrix inv_matrix(Matrix a)
 
 int rank_matrix(Matrix a)
 {
-    // ToDo
-    return 0;
+    // 初始化矩阵的秩为行数与列数的最小值
+    int rank = (a.rows < a.cols) ? (a.rows) : (a.cols); // 矩阵的秩
+
+    // 保证矩阵的行数大于列数
+    if (a.rows < a.cols)
+    {
+        a = transpose_matrix(a);
+    }
+
+    int start_i = 0; // i的初始值
+
+    // 求矩阵的秩
+    for (int j = 0; j < a.cols; j++) // 列循环
+    {
+        int i = start_i; // 初始化行变量
+
+        // 寻找第j列不为零的第i行
+        while (a.data[i][j] == 0 && i < a.rows)
+        {
+            i++;
+        }
+
+        // 分情况讨论
+        if (i != j) // 主对角线元素为零
+        {
+            if (i == a.rows) // 第j列元素全为零
+            {
+                rank--;
+                continue;
+            }
+            else // 第j列元素不全为零
+            {
+                for (int k = 0; k < a.cols; k++) // 列循环
+                {
+                    double t; // 临时中间变量
+                    L_Swap(a.data[i][k], a.data[j][k], t); // 交换第i行与第j行元素
+                }
+            }
+        } 
+        
+        // 高斯消元
+        for (int m = start_i + 1; m < a.rows; m++) // 行循环
+        {
+            double coef = a.data[m][j] / a.data[start_i][j]; // 倍乘系数
+            a.data[m][j] = 0; // 下方元素消除为零
+            for (int n = j + 1; n < a.cols; n++) // 列循环
+            {
+                a.data[m][n] -= coef * a.data[start_i][n];
+            }
+        }
+
+        // 初始行数加一
+        start_i++;
+    }
+
+    return rank;
 }
 
 double trace_matrix(Matrix a)
 {
-    /**
-     * @brief 错误提示
-    */
-   if (a.rows != a.cols)
-   {
+    // 错误提示
+    if (a.rows != a.cols)
+    {
         printf("Error: The matrix must be a square matrix.");
         return 0;
-   }
+    }
 
-   int trace = 0; //矩阵的迹
+    int trace = 0; //矩阵的迹
 
-   for (int i = 0; i < a.rows; i++)
-   {
+    for (int i = 0; i < a.rows; i++)
+    {
         trace += a.data[i][i];
-   }
+    }
 
-   return trace;
+    return trace;
 }
 
 void print_matrix(Matrix a)
